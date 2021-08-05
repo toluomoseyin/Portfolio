@@ -4,8 +4,10 @@ import "./mailer.css";
 import emailjs from "emailjs-com";
 
 function Emailer() {
+  var allOrangeJuiceByClass = document.getElementsByClassName("tosin");
   function sendEmail(e) {
     e.preventDefault();
+
     emailjs
       .sendForm(
         "service_aruqxbl",
@@ -15,95 +17,69 @@ function Emailer() {
       )
       .then((res) => {
         console.log(res);
+        for (
+          var i = 0, len = allOrangeJuiceByClass.length | 0;
+          i < len;
+          i = (i + 1) | 0
+        ) {
+          allOrangeJuiceByClass[i].value = "";
+        }
       })
       .catch((err) => console.log(err));
   }
   return (
-    <div class="container contact">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="contact-info">
-            <img
-              src="https://image.ibb.co/kUASdV/contact-image.png"
-              alt="tolu"
+    <div class="container">
+      <h5 className="mail">Wanna send me a mail?</h5>
+      <form onSubmit={sendEmail}>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">Name</label>
+          </div>
+          <div class="col-75">
+            <input
+              class="tosin"
+              required
+              type="text"
+              id="fname"
+              name="fname"
+              placeholder="Your name.."
             />
-            <h2>Contact Us</h2>
-            <h4>We would love to hear from you !</h4>
           </div>
         </div>
-        <form onSubmit={sendEmail}>
-          <div class="col-md-9">
-            <div class="contact-form">
-              <div class="form-group">
-                <label class="control-label col-sm-2" for="fname">
-                  First Name:
-                </label>
-                <div class="col-sm-10">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="fname"
-                    placeholder="Enter First Name"
-                    name="fname"
-                  />
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label col-sm-2" for="lname">
-                  Last Name:
-                </label>
-                <div class="col-sm-10">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="lname"
-                    placeholder="Enter Last Name"
-                    name="lname"
-                  />
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label col-sm-2" for="email">
-                  Email:
-                </label>
-                <div class="col-sm-10">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="Enter email"
-                    name="email"
-                  />
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label col-sm-2" for="comment">
-                  Comment:
-                </label>
-                <div class="col-sm-10">
-                  <textarea
-                    name="message"
-                    class="form-control"
-                    rows="5"
-                    id="comment"
-                  ></textarea>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <button
-                    type="submit"
-                    class="btn btn-default"
-                    className="tolu"
-                  >
-                    Submit
-                  </button>
-                </div>
-              </div>
-            </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="lname">Email</label>
           </div>
-        </form>
-      </div>
+          <div class="col-75">
+            <input
+              required
+              class="tosin"
+              type="text"
+              id="lname"
+              name="email"
+              placeholder="Your Email..."
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="subject">Message</label>
+          </div>
+          <div class="col-75">
+            <textarea
+              required
+              class="tosin"
+              id="subject"
+              name="message"
+              placeholder="Write something.."
+              style={{ height: 200 }}
+            ></textarea>
+          </div>
+        </div>
+        <div class="row" className="tolu">
+          <input type="submit" value="Submit" style={{ width: 700 }} />
+        </div>
+      </form>
     </div>
   );
 }

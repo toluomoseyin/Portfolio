@@ -22,6 +22,7 @@ function Contact() {
             </a>
           </div>
         </div>
+
         <Emailer />
       </div>
     </div>

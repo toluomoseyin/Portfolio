@@ -4,15 +4,7 @@ export const WorkData = [
     designation: "Software Engineer",
     dateJoining: "21/03/2021",
     dateEnd: "Present",
-    companyLogo: require("../../assets/social/facebook.png").default,
-    work: "The Decagon Fellowship Program provides companies with a pool of well-trained and competent software engineers to select and hire from, to meet their software engineering capacity needs.We also facilitate exclusive talent management support from start to finish, providing consistent performance management and evaluation for every engineer",
-  },
-  {
-    company: "Decagon",
-    designation: "Software Engineer",
-    dateJoining: "21/03/2021",
-    dateEnd: "Present",
-    companyLogo: require("../../assets/social/twitter.png").default,
-    work: "The Decagon Fellowship Program provides companies with a pool of well-trained and competent software engineers to select and hire from, to meet their software engineering capacity needs. We also facilitate exclusive talent management support from start to finish, providing consistent performance management and evaluation for every engineer",
+    companyLogo: require("../../assets/social/github.png").default,
+    work: "A member of a team that developed a Livestock Management Application Built projects with .NET Core, and ASP.NET Core MVC using C# language. Handled Database Management systems with SQL like SQLite, MSSQL and ORM like EntityFramework Core. Experience writing unit and integration tests.",
   },
 ];

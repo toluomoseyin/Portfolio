@@ -37,7 +37,7 @@ export const SkillsData = [
       },
       {
         name: "ASP .Net",
-        icon: <i class="devicon-css3-plain colored"></i>,
+        icon: <i class="devicon-dotnetcore-plain colored"></i>,
       },
       {
         name: "MSSQL",

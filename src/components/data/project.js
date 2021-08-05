@@ -3,7 +3,7 @@ export const ProjectData = [
     id: 1,
     title: "Animal Farm Market",
     about:
-      "An online platform that intends to provide an end-to-end solution to enable buying and selling of quality livestock fit for meatt between a local farmer and a remote intending buyer.",
+      "An online platform that intends to provide an end-to-end solution to enable buying and selling of quality livestock fit for meat between a local farmer and a remote intending buyer.",
     tags: [
       "ASP .NET Core",
       "API",

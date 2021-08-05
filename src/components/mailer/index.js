@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./mailer.css";
 import emailjs from "emailjs-com";
 
 function Emailer() {
+  const [messegeSent, setMessageSent] = useState(false);
   var allOrangeJuiceByClass = document.getElementsByClassName("tosin");
   function sendEmail(e) {
     e.preventDefault();
@@ -24,12 +25,18 @@ function Emailer() {
         ) {
           allOrangeJuiceByClass[i].value = "";
         }
+        setMessageSent(true);
       })
       .catch((err) => console.log(err));
   }
   return (
     <div class="container">
       <h5 className="mail">Wanna send me a mail?</h5>
+      {messegeSent ? (
+        <span class="badge badge-success" className="link-button">
+          message succesfully sent ✔️ 💯
+        </span>
+      ) : null}
       <form onSubmit={sendEmail}>
         <div class="row">
           <div class="col-25">
